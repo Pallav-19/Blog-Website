@@ -1,0 +1,18 @@
+<%-include('partials/header');-%>
+<h1><%=heading%></h1>
+<p><%=homeContent%></p>
+<% posts.forEach(function(post){  %>
+  <%  let content = post.content; %>
+  <%  let trimmedContent = content.substring(0,130) + " . . ."; %>
+  <%let storedTitle = post.title;%>
+
+    <h1><%= post.title %> </h1>
+    <p> <%=trimmedContent %> <a href="/posts/<%=storedTitle%>">Read More</a> </p> 
+    
+
+  <%  ;}); %>
+
+
+<%-include('partials/footer')%>
+
+
